@@ -1,25 +1,22 @@
 <template>
   <div class="home">
-    <h1>Mogo TODO</h1>
-    <TodoInput />
-    <TodoList :todos="openTodos" />
+    <h1>Archived</h1>
+    <TodoList :todos="archivedTodos" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import TodoInput from '@/components/TodoInput.vue';
 import TodoList from '@/components/TodoList.vue';
 
 export default {
-  name: 'Home',
+  name: 'Archive',
   components: {
-    TodoInput,
     TodoList
   },
   computed: {
-    openTodos() {
-      return this.$store.getters.openTodos
+    archivedTodos() {
+      return this.$store.getters.archivedTodos
     }
   }
 };
